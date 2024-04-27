@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <table border="2">
+            <th>
+                  Name
+            </th>
+            <th>
+                  Task
+            </th>
+            <th>
+                  Starting Date
+            </th>
+            <th>
+                  Ending Date
+            </th>
+            <th>
+                  Status
+            </th>
+            <th>
+                  Manage Task
+            </th>
+            <%result.forEach(function(data){%>
+                  <tr>
+                        <td>
+                              <%= data.name%>
+                        </td>
+                        <td>
+                              <%= data.task%>
+                        </td>
+                        <td>
+                              <%= data.sdate%>
+                        </td>
+                        <td>
+                              <%= data.edate%>
+                        </td>
+                        <td>
+                              <%= data.status%>
+                        </td>
+                        <td>
+                              <a href="/admin/managetask/<%= data.id %>">Manage Task</a>
+                        </td>
+                  </tr>
+                  <%})%>
+      </table>
+</body>
+
+</html>

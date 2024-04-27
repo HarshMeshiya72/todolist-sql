@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <nav>
+            <ul>
+                  <li>
+                        <a href="/assigntask">Assign Task</a>
+                  </li>
+                  <li>
+                        <a href="/assigntask/manage">Assign Task Manage</a>
+                  </li>
+                  <li>
+                        <a href="/task/complit">Complete Task</a>
+                  </li>
+                  <li>
+                        <a href="/task/decline">Decline Task</a>
+                  </li>
+                  <li>
+                        <a href="/task/start">Start Task</a>
+                  </li>
+                  <li>
+                        <a href="/task/running">Running Task</a>
+                  </li>
+                  <li>
+                        <a href="/task/pending">Pending Task</a>
+                  </li>
+                  <li>
+                        <a href="/assigntask/logout">Logout</a>
+                  </li>
+            </ul>
+      </nav>
+      <table border="">
+            <th>Task</th>
+            <th>Sarting Date</th>
+            <th>Ending Date</th>
+            <th>Status</th>
+            <th>Accept</th>
+            <th>Decline</th>
+            <%result.forEach(function(data){%>
+                  <tr>
+                        <td>
+                              <%= data.task %>
+                        </td>
+                        <td>
+                              <%= data.sdate %>
+                        </td>
+                        <td>
+                              <%= data.edate %>
+                        </td>
+                        <td>
+                              <%= data.status %>
+                        </td>
+                        <td>
+                              <a href="/assigntask/accept/<%= data.id %>">Accept</a>
+                        </td>
+                        <td>
+                              <a href="/assigntask/decline/<%= data.id %>">Decline</a>
+                        </td>
+                  </tr>
+                  <%})%>
+      </table>
+</body>
+
+</html>

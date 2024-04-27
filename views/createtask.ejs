@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+
+</head>
+
+<body>
+      <form action="" method="post">
+            <table>
+                  <tr>
+                        <td>Name: </td>
+                        <td>
+                              <select name="name" id="">
+                                    <option value="" selected disabled>--Select Staff--</option>
+                                    <%result.forEach(function(data){%>
+                                          <option value="<%= data.name%>">
+                                                <%= data.name%>
+                                          </option>
+                                          <%});%>
+                              </select>
+                        </td>
+                  </tr>
+                  <tr>
+                        <td>Task: </td>
+                        <td><input type="text" name="task"></td>
+                  </tr>
+                  <tr>
+                        <td>Ending Date: </td>
+                        <td><input type="date" name="edate" id="sedat" min=""></td>
+                  </tr>
+                  <tr>
+                        <td></td>
+                        <td><input type="submit" value="Save"></td>
+                  </tr>
+            </table>
+      </form>
+      <script>
+            let date = new Date();
+            let dat = todate.getDate();
+            let mon = todate.getMonth();
+            mon = Number(mon);
+            mon++;
+            if (mon < 10) {
+                  mon = String(mon);
+                  mon = "0" + mon;
+            } else {
+                  mon = String(mon);
+            }
+            let year = date.getFullYear();
+            document.getElementById('sedat').min = (year + "-" + mon + "-" + date);
+      </script>
+</body>
+
+</html>
